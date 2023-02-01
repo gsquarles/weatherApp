@@ -8,4 +8,4 @@ page.  Maybe later I will come back to it and make it look better as well as add
 such as future forecast and maybe instead of a button to change from Farenheit to Celsius a slider type toggle.
 
 [solution](https://github.com/gsquarles/weatherApp.git)
-[LivePreview](https://gsquarles.github.io/weatherApp/)
+[LivePreview]( https://gsquarles.github.io/weatherApp/)

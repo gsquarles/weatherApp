@@ -1,4 +1,10 @@
 import { getLocationFarenheit, getLocationCelsius} from "./modules/data";
+import snowyDay from '../dist/imgs/snowyDay.png';
+import sunnyDay from '../dist/imgs/sunWeather.png';
+import cloudyDay from '../dist/imgs/cloudyDay.png';
+import mistyDay from '../dist/imgs/mistPic.png';
+import rainyDay from '../dist/imgs/rainyDay.png';
+
 const searchBar = document.getElementById('search');
 const form = document.querySelector('form');
 const location = document.querySelector('.location');
@@ -26,15 +32,15 @@ async function displayData(city){
             wind.innerText = 'Wind Speed: ' + response.wind.toFixed(1) +'mph';
             description.innerText = response.weather;
             if(response.weather === 'Clouds'){
-                weatherPic.src = '../dist/imgs/cloudyDay.png';
+                weatherPic.src = cloudyDay;
             }else if (response.weather === 'Clear'){
-                weatherPic.src = '../dist/imgs/sunWeather.png';
+                weatherPic.src = sunnyDay;
             }else if(response.weather === 'Mist'){
-                weatherPic.src = '../dist/imgs/mistPic.png';
+                weatherPic.src = mistyDay;
             }else if (response.weather === 'Rain'){
-                weatherPic.src = '../dist/imgs/rainyDay.png';
+                weatherPic.src = rainyDay;
             }else if (response.weather === 'Snow'){
-                weatherPic.src = '../dist/imgs/snowyDay.png';
+                weatherPic.src = snowyDay;
             }else{
                 weatherPic.src = '';
         }
