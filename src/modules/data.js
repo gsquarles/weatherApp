@@ -1,5 +1,6 @@
 export const getLocation = async function (location){
-    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=f824c9a258641470aebe27d4e0e686d3`
+    try{
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=f824c9a258641470aebe27d4e0e686d3&units=imperial`
     , {mode:"cors"});
     const json = await response.json();
     const weatherData = {
@@ -13,9 +14,9 @@ export const getLocation = async function (location){
         wind: json.wind.speed
     };
     return weatherData;
+    }catch(err){
+        alert('City not found Try again');
+    }
+    
 }
 
-export async function logObject(location){
-    const response = await getLocation(location);
-    console.log(response);
-}
