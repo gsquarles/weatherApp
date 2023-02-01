@@ -13,7 +13,7 @@ const weatherPic = document.querySelector('.weatherPic');
 
 
 
-async function getObject(city){
+async function displayData(city){
     try{
         const response = await getLocation(city);
         location.innerText = response.name;
@@ -46,6 +46,6 @@ async function getObject(city){
 form.addEventListener('submit',(event)=> {
     event.preventDefault();
     const info = searchBar.value;
-    getObject(info);
+    displayData(info);
     searchBar.value = '';
 })
